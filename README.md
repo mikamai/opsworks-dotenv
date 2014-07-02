@@ -8,20 +8,20 @@ Configure the environment for you Rails application using OpsWorks, Chef and Dot
 
 Add the Dotenv gem to your `Gemfile`
 
-```
+```ruby
 gem 'dotenv-rails'
 ```
 
 run bundle
 
-```
+```bash
 $ bundle
 ```
 
 as soon as possible, load the environment through Dotenv
 
 
-```
+```ruby
 # application.rb
 require File.expand_path('../boot', __FILE__)
 require 'dotenv'
