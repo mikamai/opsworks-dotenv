@@ -18,7 +18,7 @@ node[:deploy].each do |application, deploy|
   Chef::Log.info("Generating dotenv for app: #{application} with env: #{rails_env}...")
 
   begin
-    open("#{deploy[:deploy_to]}/shared/.env", 'w') do |f|
+    open("#{params[:deploy][:deploy_to]}/shared/.env", 'w') do |f|
       require 'yaml'
       deploy[:app_env].to_h.each do |name, value|
         f.puts "#{name}=#{value.to_s}"
