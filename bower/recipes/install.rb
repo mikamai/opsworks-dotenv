@@ -5,10 +5,4 @@ node[:deploy].each do |_, deploy|
     cwd "#{deploy[:deploy_to]}/current"
     code "npm install -g bower"
   end
-
-  execute "bower install" do
-    cwd "#{deploy[:deploy_to]}/current/"
-    user "deploy"
-    environment ({'HOME' => '/home/deploy'})
-  end
 end
