@@ -1,15 +1,15 @@
 log "installing ttf-wqy-zenhei & ttf-wqy-microhei"
 
 node[:deploy].each do |application, deploy|
-  execute 'apt-get install ttf-wqy-zenhei' do
-    command 'apt-get install ttf-wqy-zenhei'
-    ignore_failure true
-    only_if { apt_installed? }
+  script "apt-get install ttf-wqy-zenhei" do
+    interpreter "bash"
+    user "root"
+    code "apt-get install ttf-wqy-zenhei"
   end
 
-  execute 'apt-get install ttf-wqy-microhei' do
-    command 'apt-get install ttf-wqy-microhei'
-    ignore_failure true
-    only_if { apt_installed? }
+  script "apt-get install ttf-wqy-microhei" do
+    interpreter "bash"
+    user "root"
+    code "apt-get install ttf-wqy-microhei"
   end
 end
