@@ -5,13 +5,11 @@ node[:deploy].each do |application, deploy|
     command 'apt-get install ttf-wqy-zenhei'
     ignore_failure true
     only_if { apt_installed? }
-    action :nothing
   end
 
   execute 'apt-get install ttf-wqy-microhei' do
     command 'apt-get install ttf-wqy-microhei'
     ignore_failure true
     only_if { apt_installed? }
-    action :nothing
   end
 end
